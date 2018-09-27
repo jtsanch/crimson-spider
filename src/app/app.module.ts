@@ -8,11 +8,13 @@ import { AlertModule } from './components/alert/alert.module';
 import { LoginModule } from './components/login/login.module';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
+import { OptionComponent } from './components/option/option.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
+        OptionComponent,
     ],
     imports: [
         BrowserModule,

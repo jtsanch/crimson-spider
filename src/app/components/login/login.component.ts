@@ -3,6 +3,7 @@ import { UserLoginModel, UserLoginUtil } from '../../models/user-login.model';
 import { UserCreateModel, UserCreateUtil } from '../../models/user-create.model';
 import { AuthService } from '../../services/auth/auth.service';
 import { AlertService } from '../alert/alert.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
     constructor(
         private _authService: AuthService,
         private _alertService: AlertService,
+        private _router: Router,
     ) {}
 
     ngOnInit() {
@@ -33,6 +35,7 @@ export class LoginComponent implements OnInit {
             .then(() => {
                 this.loading = false;
                 this._alertService.showAlert('User logged in', 'info');
+                this._router.navigate(['/option']);
             })
             .catch((err) => {
                 this.loading = false;
@@ -45,6 +48,7 @@ export class LoginComponent implements OnInit {
             .then(() => {
                 this.loading = false;
                 this._alertService.showAlert('User created', 'info');
+                this._router.navigate(['/option']);
             })
             .catch((err) => {
                 this.loading = false;

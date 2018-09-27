@@ -1,0 +1,65 @@
+<script src="../../app.routing.ts"></script>
+<section
+    #loginForm="ngForm"
+    class="login-user"
+    ngForm="loginForm"
+    *ngIf="!creating">
+    <header>Login</header>
+    <div class="input-group">
+        <label for="email-login">Email</label>
+        <input
+            [(ngModel)]="userLogin.email"
+            required
+            name="email"
+            type="email"
+            id="email-login">
+    </div>
+    <div class="input-group">
+        <label for="password-login">Password</label>
+        <input
+            required
+            [(ngModel)]="userLogin.password"
+            name="passowrd"
+            type="password"
+            id="password-login">
+    </div>
+    <button type="submit" (click)="loginUser()">Login</button>
+</section>
+<section
+    #createForm="ngForm"
+    class="create-user"
+    ngForm="createForm"
+    *ngIf="creating">
+    <div class="input-group">
+        <label for="email-create">Email</label>
+        <input
+            [(ngModel)]="userCreate.email"
+            type="email"
+            name="email"
+            id="email-create">
+    </div>
+    <div class="input-group">
+        <label for="password-create">Password</label>
+        <input
+            required
+            name="password"
+            [(ngModel)]="userCreate.password"
+            type="password"
+            id="password-create">
+    </div>
+    <div class="input-group">
+        <label for="password-confirm-create">Confirm password:</label>
+        <input
+            required
+            name="confirm-password"
+            [(ngModel)]="userCreate.confirmPassword"
+            type="password"
+            id="password-confirm-create">
+    </div>
+    <button type="submit" (click)="createUser()">Create User</button>
+</section>
+<div class="create-or-login-user">
+    <span class="create-user" *ngIf="!creating" (click)="toggleCreating()">New user? Create user here</span>
+    <span class="login-user" *ngIf="creating" (click)="toggleCreating()">Already an user? Login here</span>
+</div>
+<app-loader [loading]="loading"></app-loader>

@@ -1,0 +1,16 @@
+<div class="factor-option" *ngFor="let factor of factors">
+    {{ factor.name }}
+</div>
+<div class="factor-creation" ngForm="factorForm">
+    <div class="input-group">
+        <label for="title">Title:</label>
+        <input
+            id="title"
+            type="text"
+            [(ngModel])="factor.title">
+    </div>
+    <div class="input-group">
+        <label for="content">Content:</label>
+        <textarea id="content" [(ngModel)]="factor.content"></textarea>
+    </div>
+</div>

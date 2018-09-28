@@ -1,0 +1,9 @@
+<header>
+    <div class="logo">
+        Crimson Spider
+    </div>
+    <div class="actions">
+        <button class="logout" (click)="logout()" *ngIf="!!user">Logout</button>
+        <span class="user-details" *ngIf="!!user">Hello, {{ user.email }}</span>
+    </div>
+</header>

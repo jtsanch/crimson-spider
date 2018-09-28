@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { User } from 'firebase';
+import { User, auth } from 'firebase';
 import { P } from '@angular/core/src/render3';
 
 @Injectable()
@@ -38,8 +38,12 @@ export class AuthService {
         return promise;
     }
 
-    public isLoggedIn(): boolean {
-        return !!this._user;
+    public isLoggedIn(): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            this.afAuth.auth.onAuthStateChanged(user => {
+                resolve(!!user);
+            });
+        });
     }
 
     public getUser(): Promise<User> {
@@ -49,9 +53,21 @@ export class AuthService {
                     this._user = user;
                     resolve(user);
                 } else {
-                    reject(null);
+                    resolve(null);
                 }
             });
+        });
+    }
+
+    public logout(): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            this.afAuth.auth.signOut()
+                .then(() => {
+                   resolve(true);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
         });
     }
 }

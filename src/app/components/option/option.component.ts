@@ -14,7 +14,6 @@ export class OptionComponent implements  OnInit{
     constructor(private _authService: AuthService,) {}
 
     ngOnInit() {
-
         this._authService.getUser()
             .then((user) => {
                 this.user = user;

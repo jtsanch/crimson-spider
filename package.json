@@ -29,7 +29,8 @@
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
     "firebase": "^5.5.1",
-    "rxjs": "^5.5.6",
+    "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.3.3",
     "typescript": "~2.5.3",
     "zone.js": "^0.8.19"
   },

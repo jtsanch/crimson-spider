@@ -1,16 +1,57 @@
-<div class="factor-option" *ngFor="let factor of factors">
-    {{ factor.name }}
+<div class="list-view" *ngIf="!editMode && !creating">
+    <div
+        class="factor-option"
+        *ngFor="let factor of factors; let index = index">
+        <div class="factor-header">Factor {{ index + 1 }}</div>
+        <div class="title">
+            Title: {{ factor.title }}
+        </div>
+        <div class="content">
+            Content: {{ factor.content}}
+        </div>
+        <div class="values">
+            <div *ngFor="let value of factor.values">
+                {{ value.value }} - {{ value.text }}
+            </div>
+        </div>
+        <a class="edit-factor" (click)="enterEditMode(factor)">Edit Factor</a>
+    </div>
+    <button class="create-factor" (click)="enterCreateMode()">Create Factor</button>
 </div>
-<div class="factor-creation" ngForm="factorForm">
+<div *ngIf="editMode || creating" class="factor-creation" ngForm="factorForm">
     <div class="input-group">
         <label for="title">Title:</label>
         <input
             id="title"
             type="text"
-            [(ngModel])="factor.title">
+            name="title"
+            [(ngModel)]="factor.title">
     </div>
     <div class="input-group">
         <label for="content">Content:</label>
-        <textarea id="content" [(ngModel)]="factor.content"></textarea>
+        <textarea id="content" [(ngModel)]="factor.content" name="content"></textarea>
     </div>
+    <div class="input-group">
+        <label for="factor-value-one">Factor Value {{ factor.values[0].value }}</label>
+        <input id="factor-value-one" type="text" name="factor-one" [(ngModel)]="factor.values[0].text">
+    </div>
+    <div class="input-group">
+        <label for="factor-value-two">Factor Value {{ factor.values[1].value }}</label>
+        <input id="factor-value-two" type="text" name="factor-two" [(ngModel)]="factor.values[1].text">
+    </div>
+    <div class="input-group">
+        <label for="factor-value-three">Factor Value {{ factor.values[2].value }}</label>
+        <input id="factor-value-three" type="text" name="factor-three" [(ngModel)]="factor.values[2].text">
+    </div>
+    <div class="input-group">
+        <label for="factor-value-four">Factor Value {{ factor.values[3].value }}</label>
+        <input id="factor-value-four" type="text" name="factor-four" [(ngModel)]="factor.values[3].text">
+    </div>
+    <div class="input-group">
+        <label for="factor-value-five">Factor Value {{ factor.values[4].value }}</label>
+        <input id="factor-value-five" type="text" name="factor-five" [(ngModel)]="factor.values[4].text">
+    </div>
+    <button type="submit" (click)="submitFactor()">Submit Factor</button>
+    <button type="button" (click)="exitSubmitMode()">Cancel</button>
 </div>
+<app-loader [loading]="loading"></app-loader>

@@ -1,12 +1,16 @@
-<div class="comparison" *ngIf="user">
-    <button type="button" (click)="createFeature()">Create Feature</button>
-    <div class="option-question" *ngFor="let feature of user.features">
+<aside class="comparison sidebar" *ngIf="user">
+    <header>
+        <span class="comparison-name">Comparison 1</span>
+        <span class="add-feature-button" (click)="createFeature()">+</span>
+    </header>
+    <div class="option-question" *ngFor="let feature of user.features; let index = index">
         <app-feature
             (onUpdateChart)="updateChart()"
             (onSetEnabled)="setEnabled($event)"
             (onCancelCreateFeature)="onCancelCreate()"
             (onFeatureCreated)="onFeatureCreate()"
             [creating]="creating"
+            [color]="colors[index]"
             [feature]="feature">
         </app-feature>
     </div>
@@ -19,9 +23,10 @@
         [creating]="creating"
         [feature]="feature">
     </app-feature>
-</div>
+</aside>
 <app-spiderchart
         *ngIf="user && user.features.length"
         #spiderchart
+        [colors]="colors"
         [features]="user.features"></app-spiderchart>
 <app-loader [loading]="loading"></app-loader>

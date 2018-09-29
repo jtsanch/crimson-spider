@@ -1,0 +1,33 @@
+@import '../../styles/color';
+@import '../../styles/font';
+
+header {
+    display: flex;
+    height: 3rem;
+    border-bottom: 1px solid $GRAY_LIGHT;
+    align-items: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    flex-direction: row;
+    justify-content: space-between;
+    .logo {
+        height: 1rem;
+        padding-left: 1rem;
+        text-transform: uppercase;
+        color: $PRIMARY_COLOR;
+        font-size: $FONT_SIZE_DEFAULT;
+        font-weight: 600;
+    }
+    .actions {
+        padding-right: 1rem;
+        font-size: $FONT_SIZE_SMALL;
+        .user-profile {
+            display: flex;
+            flex-direction: column;
+            .logout {
+                color: $PRIMARY_COLOR;
+                font-style: italic;
+                text-align: right;
+            }
+        }
+    }
+}

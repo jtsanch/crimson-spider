@@ -9,12 +9,13 @@ import { AlertService } from '../alert/alert.service';
 @Component({
     selector: 'app-feature',
     templateUrl: './feature.component.html',
-    styleUrls: ['./feature.component.css']
+    styleUrls: ['./feature.component.scss']
 })
 export class FeatureComponent implements OnInit, OnChanges {
 
     @Input() public feature: FeatureModel;
     @Input() public creating: boolean;
+    @Input() public color: string;
 
     @Output() public onUpdateChart: EventEmitter<void> = new EventEmitter<void>();
     @Output() public onCancelCreateFeature: EventEmitter<void> = new EventEmitter<void>();

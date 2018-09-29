@@ -1,0 +1,41 @@
+@import '../../styles/font';
+@import '../../styles/color';
+
+.question {
+    height: 3rem;
+    border-bottom: 1px solid $GRAY_LIGHT;
+    .factor-form {
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        .title {
+            display: inline-block;
+            flex: 1;
+            paddng-left: 1rem;
+            font-size: $FONT_SIZE_LARGE;
+            font-weight: 200;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .color {
+            border: 1px solid $GRAY_LIGHT;
+            display: inline-block;
+            height: 2rem;
+            width: 1rem;
+            margin-left: 1rem;
+        }
+        .input-group {
+            display: flex;
+            flex: 5;
+            flex-direction: row;
+            justify-content: space-evenly;
+            .radio-group {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                font-size: $FONT_SIZE_VERY_SMALL;
+            }
+        }
+    }
+}

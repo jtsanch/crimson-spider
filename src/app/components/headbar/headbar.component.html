@@ -1,9 +1,9 @@
 <header>
-    <div class="logo">
-        Crimson Spider
-    </div>
+    <div class="logo">Impact Profile</div>
     <div class="actions">
-        <button class="logout" (click)="logout()" *ngIf="!!user">Logout</button>
-        <span class="user-details" *ngIf="!!user">Hello, {{ user.email }}</span>
+        <div class="user-profile">
+            <span class="user-details" *ngIf="!!user">{{ user.email }}</span>
+            <a class="logout" (click)="logout()" *ngIf="!!user">Logout</a>
+        </div>
     </div>
 </header>

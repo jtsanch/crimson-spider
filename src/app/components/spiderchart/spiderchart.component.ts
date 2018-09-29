@@ -10,6 +10,8 @@ import { FeatureModel } from '../../models/feature.model';
 export class SpiderchartComponent implements OnInit, OnChanges {
 
     @Input() public features: FeatureModel[];
+    @Input() public colors: string[];
+
     public myChart: any;
 
     constructor() {
@@ -29,12 +31,16 @@ export class SpiderchartComponent implements OnInit, OnChanges {
             return factor.title;
         });
 
+        let index = -1;
         const datasets = this.features.map((feature) => {
+            index++;
             return {
                 data: feature.factors.map((factor) => {
                     return factor.chosenValue;
                 }),
                 label: feature.title,
+                borderColor: this.colors[index],
+                fill: false,
             };
         });
         this.myChart = new Chart(ctx, {

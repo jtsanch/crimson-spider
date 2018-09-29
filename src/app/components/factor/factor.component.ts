@@ -7,7 +7,7 @@ import { AlertService } from '../alert/alert.service';
 @Component({
     selector: 'app-factor',
     templateUrl: './factor.component.html',
-    styleUrls: ['./factor.component.css']
+    styleUrls: ['./factor.component.scss']
 })
 export class FactorComponent implements OnInit {
 

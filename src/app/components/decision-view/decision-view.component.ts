@@ -9,7 +9,7 @@ import { SpiderchartComponent } from '../spiderchart/spiderchart.component';
 @Component({
     selector: 'app-decision-view',
     templateUrl: './decision-view.component.html',
-    styleUrls: ['./decision-view.component.css']
+    styleUrls: ['./decision-view.component.scss']
 })
 export class DecisionViewComponent implements OnInit {
 
@@ -19,12 +19,24 @@ export class DecisionViewComponent implements OnInit {
     public creating: boolean = false;
     public user: UserServiceModel;
     public feature: FeatureModel;
+    public colors: string[];
 
     constructor(
         private _alertService: AlertService,
         private _optionService: OptionService,
         private _userService: UserService,
     ) {}
+
+    private _initColors(): void {
+        this.colors = [
+            '#FFFD82',
+            '#A1FCDF',
+            '#ABA9BF',
+            '#2E4057',
+            '#FFD046',
+            '#FF9B71',
+        ];
+    }
 
     public updateChart(): void {
         this.spiderchart.renderChart();
@@ -59,5 +71,6 @@ export class DecisionViewComponent implements OnInit {
 
     ngOnInit() {
         this.reloadUser();
+        this._initColors();
     }
 }

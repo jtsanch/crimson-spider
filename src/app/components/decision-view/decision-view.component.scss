@@ -1,0 +1,30 @@
+@import '../../styles/color';
+@import '../../styles/font';
+
+app-decision-view {
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar {
+    width: 40%;
+    height: 100%;
+    overflow-y: auto;
+    display: inline-block;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    background-color: $GRAY_VERY_LIGHT;
+    .comparison-name {
+        font-weight: 600;
+        font-size: $FONT_SIZE_LARGE;
+        padding-left: 1rem;
+    }
+    .add-feature-button {
+        font-size: 1.8rem;
+        padding-right: 1rem;
+        display: inline-block;
+        &:hover {
+            cursor: pointer;
+            color: $GRAY_LIGHT;
+        }
+    }
+}

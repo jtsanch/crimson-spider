@@ -15,6 +15,7 @@ export interface FactorModel {
 export interface FactorRequestModel {
     title: string;
     content: string;
+    enabled: boolean;
     values: FactorValue[];
 }
 

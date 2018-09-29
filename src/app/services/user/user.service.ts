@@ -35,11 +35,19 @@ export class UserService {
     }
 
     private _formUser(user): UserServiceModel {
-        return {
-            email: user[0],
-            features: user[1],
-            key: user[2] || [],
-        };
+        if (user.length === 2) {
+            return {
+                email: user[0],
+                key: user[1],
+                features: [],
+            };
+        } else {
+            return {
+                email: user[0],
+                features: user[1],
+                key: user[2] || [],
+            };
+        }
     }
 
     private _getUser(userUuid: string): Promise<any> {

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AlertService } from '../alert/alert.service';
 import { OptionService } from '../../services/option/option.service';
 import { FeatureModel, FeatureUtil } from '../../models/feature.model';
 import { UserService } from '../../services/user/user.service';
 import { UserServiceModel } from '../../models/user.model';
+import { SpiderchartComponent } from '../spiderchart/spiderchart.component';
 
 @Component({
     selector: 'app-decision-view',
@@ -11,6 +12,8 @@ import { UserServiceModel } from '../../models/user.model';
     styleUrls: ['./decision-view.component.css']
 })
 export class DecisionViewComponent implements OnInit {
+
+    @ViewChild('spiderchart') spiderchart: SpiderchartComponent;
 
     public loading: boolean = false;
     public creating: boolean = false;
@@ -24,7 +27,7 @@ export class DecisionViewComponent implements OnInit {
     ) {}
 
     public updateChart(): void {
-
+        this.spiderchart.renderChart();
     }
 
     public setEnabled(event: {val: boolean, survey: FeatureModel}): void {

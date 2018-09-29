@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { FactorModel, FactorRequestModel } from '../../models/factor.model';
+import { UserService } from '../user/user.service';
 
 @Injectable()
 export class FactorService {
 
-    constructor(private db: AngularFireDatabase) {
+    constructor(
+        private db: AngularFireDatabase,
+        private _userService: UserService,
+        ) {
     }
 
     public getFactors(): Promise<any[]> {
@@ -23,9 +27,19 @@ export class FactorService {
         });
     }
 
+    private _formFactorRequest(factor: FactorModel): FactorRequestModel {
+        return {
+            title: factor.title,
+            enabled: factor.enabled,
+            content: factor.content,
+            values: factor.values,
+        };
+    }
+
     public createFactor(factor: FactorModel): Promise<FactorModel> {
+        const factorRequest = this._formFactorRequest(factor);
         return new Promise((resolve) => {
-            this.db.list('/factors').push(factor)
+            this.db.list('/factors').push(factorRequest)
                 .then((createdFactor) => {
                     resolve(createdFactor)
                 });

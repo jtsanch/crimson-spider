@@ -20,5 +20,5 @@
         [feature]="feature">
     </app-feature>
 </div>
-<app-spiderchart></app-spiderchart>
+<app-spiderchart *ngIf="user" [features]="user.features"></app-spiderchart>
 <app-loader [loading]="loading"></app-loader>

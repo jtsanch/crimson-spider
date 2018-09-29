@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as Chart from '../../../../node_modules/chart.js/dist/Chart.js';
+import { FeatureModel } from '../../models/feature.model';
 
 @Component({
     selector: 'app-spiderchart',
     templateUrl: './spiderchart.component.html',
-    styleUrls: ['./spiderchart.component.css']
+    styleUrls: ['./spiderchart.component.scss']
 })
 export class SpiderchartComponent implements OnInit {
 
+    @Input() public features: FeatureModel[];
     public myChart: any;
 
     constructor() {
     }
 
     ngOnInit() {
+        console.log(this.features);
         const elem = <HTMLCanvasElement>document.getElementById("myChart");
         const ctx = elem.getContext('2d');
 

@@ -7,6 +7,8 @@ export interface FactorModel {
     key: string;
     title: string;
     content: string;
+    chosenValue: number;
+    enabled: boolean;
     values: FactorValue[],
 }
 
@@ -26,6 +28,8 @@ export class FactorUtil {
             key: '',
             title: '',
             content: '',
+            chosenValue: 1,
+            enabled: false,
             values,
         };
     }

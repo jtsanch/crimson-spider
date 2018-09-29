@@ -11,6 +11,9 @@ import { appRoutes } from './app.routing';
 import { HeadbarModule } from './components/headbar/headbar.module';
 import { FactorModule } from './components/factor/factor.module';
 import { OptionModule } from './components/option/option.module';
+import { DecisionViewModule } from './components/decision-view/decision-view.module';
+import { SpiderchartModule } from './components/spiderchart/spiderchart.module';
+import { FeatureModule } from './components/feature/feature.module';
 
 @NgModule({
     declarations: [
@@ -23,6 +26,9 @@ import { OptionModule } from './components/option/option.module';
         HeadbarModule,
         FactorModule,
         OptionModule,
+        DecisionViewModule,
+        FeatureModule,
+        SpiderchartModule,
         AngularFireModule.initializeApp(environment.firebase),
         RouterModule.forRoot(
             appRoutes,

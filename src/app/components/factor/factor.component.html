@@ -9,6 +9,9 @@
         <div class="content">
             Content: {{ factor.content}}
         </div>
+        <div class="enabled" *ngIf="factor.enabled">
+            Enabled
+        </div>
         <div class="values">
             <div *ngFor="let value of factor.values">
                 {{ value.value }} - {{ value.text }}
@@ -26,6 +29,15 @@
             type="text"
             name="title"
             [(ngModel)]="factor.title">
+    </div>
+    <div class="input-group">
+        <label for="enabled">Enabled</label>
+        <input
+            id="enabled"
+            type="checkbox"
+            name="enabled"
+            (click)="toggleFactor(factor)"
+            [(ngModel)]="factor.enabled">
     </div>
     <div class="input-group">
         <label for="content">Content:</label>

@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { OptionComponent } from './option.component';
-import { AuthModule } from '../../services/auth/auth.module';
+import { OptionServiceModule } from '../../services/option/option-service.module';
+import { FactorServiceModule } from '../../services/factor/factor.service.module';
+import { AlertModule } from '../alert/alert.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -9,7 +12,10 @@ import { AuthModule } from '../../services/auth/auth.module';
     ],
     imports: [
         BrowserModule,
-        AuthModule,
+        OptionServiceModule,
+        FactorServiceModule,
+        AlertModule,
+        FormsModule,
     ],
     exports: [
         OptionComponent,

@@ -35,6 +35,10 @@ export class FactorComponent implements OnInit {
         this.editMode = true;
     }
 
+    public toggleFactor(factor: FactorModel) {
+        factor.enabled = !factor.enabled;
+    }
+
     public exitSubmitMode() {
         this.creating = false;
         this.editMode = false;

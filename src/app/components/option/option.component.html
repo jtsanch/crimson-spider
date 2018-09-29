@@ -1,0 +1,30 @@
+<div class="option-list" *ngIf="!creating && !editMode">
+    <div *ngFor="let option of options">
+        <div class="title">{{ option.title }}</div>
+        <div class="description">{{ option.description }}</div>
+        <div class="factor" *ngFor="let factor of option.factors; let index = index">
+            {{ index }}. {{ factor.title }}
+        </div>
+        <button type="button" (click)="enterEditMode(option)">Edit Option</button>
+    </div>
+    <button type="button" (click)="enterCreateMode()">Create Option</button>
+</div>
+<div class="option-form" ngForm="optionForm" *ngIf="creating || editMode">
+    <div class="factors">
+        <div class="header">Available Factors</div>
+        <div ngForm="let factor of factors">
+            <span class="title"> {{ factor.title }}</span>
+            <button type="button" (click)="addFactorToOption(factor)" *ngIf="!optionHasFactor(factor)">Add Factor</button>
+            <span class="added" *ngIf="optionHasFactor(factor)">Added</span>
+            <button type="button" (click)="removeFactorFromOption(fator)" *ngIf="optionHasFactor(factor)">Remove Factor</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" [(ngModel)]="option.title">
+    </div>
+    <div class="input-group">
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="option.description"></textarea>
+    </div>
+</div>

@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AuthModule } from '../../services/auth/auth.module';
-import { SurveyComponent } from './survey.component';
+import { SpiderchartComponent } from './spiderchart.component';
 
 @NgModule({
     declarations: [
-        SurveyComponent,
+        SpiderchartComponent,
     ],
     imports: [
         BrowserModule,
         AuthModule,
     ],
     exports: [
-        SurveyComponent,
+        SpiderchartComponent,
     ]
 })
-export class SurveyModule {}
+export class SpiderchartModule {}

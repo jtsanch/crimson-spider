@@ -1,0 +1,50 @@
+@import '../../styles/color';
+
+.alert {
+    position: absolute;
+    background-color: $PRIMARY_COLOR;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    left: 50%;
+    top: 3.2rem;
+    padding: 5px 25px 5px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: .8rem;
+    &.open {
+        animation-name:slideInAndFadeOut;
+        animation-duration: 1.5s;
+        display: block;
+        &.danger {
+            background-color: $LIGHT_RED;
+        }
+        &.info {
+            background-color: $PRIMARY_COLOR;
+        }
+    }
+    &.close {
+        display: none;
+    }
+}
+
+@keyframes slideInAndFadeOut {
+    from {
+        top: 0;
+        display: none;
+    }
+    50% {
+        top: 3.2rem;
+        display: block;
+    }
+    75% {
+        opacity: 1;
+    }
+    90% {
+        opacity: .5;
+    }
+    to {
+        opacity: 0;
+        display: block;
+    }
+}

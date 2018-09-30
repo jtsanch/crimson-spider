@@ -1,5 +1,5 @@
 <div
-    [class]="{'danger': type === 'danger'}"
-    *ngIf="alertOn">
+    class="alert"
+    [ngClass]="{'open': alertOn, 'close': !alertOn, 'danger': type === 'danger', 'info': type === 'info'}">
     {{ content }}
 </div>

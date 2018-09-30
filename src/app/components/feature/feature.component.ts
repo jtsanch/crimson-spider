@@ -32,9 +32,11 @@ export class FeatureComponent implements OnInit, OnChanges {
     @Output() public onUpdateChart: EventEmitter<void> = new EventEmitter<void>();
     @Output() public onCancelCreateFeature: EventEmitter<void> = new EventEmitter<void>();
     @Output() public onFeatureCreated: EventEmitter<void> = new EventEmitter<void>();
+    @Output() public featureInCreationOutput: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     public loading: boolean = false;
     public radioButtonsOn: boolean = false;
+    public featureInCreation: boolean = false;
 
     constructor(
         private _featureService: FeatureService,
@@ -69,12 +71,16 @@ export class FeatureComponent implements OnInit, OnChanges {
     }
 
     public createFeature() {
-        if (this.featureForm.invalid) {
+        if (this.featureForm.invalid || this.featureInCreation) {
             this._alertService.showAlert('Please enter a feature name', 'danger');
             return;
         }
+        this.featureInCreation = true;
+        this.featureInCreationOutput.emit(true);
         this._featureService.createFeature(this.feature)
             .then(() => {
+                this.featureInCreationOutput.emit(false);
+                this.featureInCreation = false;
                 this._alertService.showAlert('Feature created', 'info');
                 this.onFeatureCreated.emit();
             })

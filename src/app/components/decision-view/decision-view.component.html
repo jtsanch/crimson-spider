@@ -9,6 +9,7 @@
             (onSetEnabled)="setEnabled($event)"
             (onCancelCreateFeature)="onCancelCreate()"
             (onFeatureCreated)="onFeatureCreate()"
+            (featureInCreationOutput)="setFeatureLoading($event)"
             [color]="getCurrentColor()"
             [creating]="creating"
             [feature]="feature">
@@ -24,11 +25,10 @@
             [feature]="feature">
         </app-feature>
     </div>
-
 </aside>
 <app-spiderchart
         *ngIf="user && user.features.length"
         #spiderchart
         [colors]="colors"
         [features]="user.features"></app-spiderchart>
-<app-loader [loading]="loading"></app-loader>
+<app-loader class="main-loader" [loading]="loading"></app-loader>

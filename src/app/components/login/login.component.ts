@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
             .then(() => {
                 this.loading = false;
                 this._alertService.showAlert('User logged in', 'info');
-                this._router.navigate(['/option']);
+                this._router.navigate(['/comparison']);
             })
             .catch((err) => {
                 this.loading = false;
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
             .then(() => {
                 this.loading = false;
                 this._alertService.showAlert('User created', 'info');
-                this._router.navigate(['/option']);
+                this._router.navigate(['/comparison']);
             })
             .catch((err) => {
                 this.loading = false;

@@ -5,7 +5,12 @@ app-decision-view {
     height: 100%;
     width: 100%;
 }
-
+.main-loader {
+    height: calc(100vh - 3rem);
+    width: 100vw;
+    position: absolute;
+    top: 3rem;
+}
 .sidebar {
     width: 40%;
     height: calc(100vh - 3.4rem);

@@ -1,6 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { AlertService } from '../alert/alert.service';
-import { OptionService } from '../../services/option/option.service';
 import { FeatureModel, FeatureUtil } from '../../models/feature.model';
 import { UserService } from '../../services/user/user.service';
 import { UserServiceModel } from '../../models/user.model';
@@ -25,7 +24,6 @@ export class DecisionViewComponent implements OnInit {
 
     constructor(
         private _alertService: AlertService,
-        private _optionService: OptionService,
         private _userService: UserService,
     ) {}
 
@@ -54,6 +52,9 @@ export class DecisionViewComponent implements OnInit {
         }
     }
 
+    public setFeatureLoading(loading: boolean) {
+        this.loading = loading;
+    }
     public getCurrentColor(): string {
         const index = this.user.features.length ? this.user.features.length + 1 : 0;
         return this.colors[index];

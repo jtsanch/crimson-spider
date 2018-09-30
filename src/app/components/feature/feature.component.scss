@@ -60,6 +60,9 @@
                 display: inline-block;
                 width: 24px;
                 height: 14px;
+                &:hover {
+                    cursor: pointer;
+                }
                 &.gray {
                     background-image: url("assets/icons/eye.png");
                 }
@@ -87,14 +90,44 @@
         }
     }
 }
+
+@keyframes slideOut {
+    from {
+        height: 15rem;
+    }
+    to {
+        height: 0;
+    }
+}
+@keyframes slideIn {
+    from {
+        height: 0;
+    }
+    to {
+        height: 15rem;
+    }
+}
+
 .questions {
     position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid $GRAY_LIGHT;
+    &.open {
+        animation-name: slideIn;
+        animation-duration: 1s;
+        height: 15rem;
+    }
+    &.close {
+        animation-name: slideOut;
+        animation-duration: 1s;
+        height: 0;
+    }
     .shroud {
         position: absolute;
         height: 100%;
         width: 100%;
         background-color: $BLACK;
-        opacity: .4;
+        opacity: .05;
     }
     .question {
         height: 3rem;

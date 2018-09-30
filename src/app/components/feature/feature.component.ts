@@ -1,10 +1,21 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+    Component,
+    EventEmitter,
+    HostListener,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges,
+    ViewChild
+} from '@angular/core';
 import { OptionModel } from '../../models/option.model';
 import { FeatureModel } from '../../models/feature.model';
 import { UserService } from '../../services/user/user.service';
 import { FeatureService } from '../../services/feature/feature.service';
 import { FactorService } from '../../services/factor/factor.service';
 import { AlertService } from '../alert/alert.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'app-feature',
@@ -13,6 +24,7 @@ import { AlertService } from '../alert/alert.service';
 })
 export class FeatureComponent implements OnInit, OnChanges {
 
+    @ViewChild('featureForm') featureForm: NgForm;
     @Input() public feature: FeatureModel;
     @Input() public creating: boolean;
     @Input() public color: string;
@@ -22,6 +34,7 @@ export class FeatureComponent implements OnInit, OnChanges {
     @Output() public onFeatureCreated: EventEmitter<void> = new EventEmitter<void>();
 
     public loading: boolean = false;
+    public radioButtonsOn: boolean = false;
 
     constructor(
         private _featureService: FeatureService,
@@ -39,10 +52,22 @@ export class FeatureComponent implements OnInit, OnChanges {
     ngOnChanges(changes: SimpleChanges) {
         if (changes.creating) {
             this.initializeAndSetEnabledFactors();
+            this.radioButtonsOn = true;
         }
     }
 
+    public toggleRadioButtons() {
+        if (this.creating) {
+            this.onCancelCreateFeature.emit();
+        }
+        this.radioButtonsOn = !this.radioButtonsOn;
+    }
+
     public createFeature() {
+        if (this.featureForm.invalid) {
+            this._alertService.showAlert('Please enter a feature name', 'danger');
+            return;
+        }
         this._featureService.createFeature(this.feature)
             .then(() => {
                 this._alertService.showAlert('Feature created', 'info');

@@ -1,10 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { AlertService } from '../alert/alert.service';
 import { OptionService } from '../../services/option/option.service';
 import { FeatureModel, FeatureUtil } from '../../models/feature.model';
 import { UserService } from '../../services/user/user.service';
 import { UserServiceModel } from '../../models/user.model';
 import { SpiderchartComponent } from '../spiderchart/spiderchart.component';
+import { FeatureComponent } from '../feature/feature.component';
 
 @Component({
     selector: 'app-decision-view',
@@ -14,6 +15,7 @@ import { SpiderchartComponent } from '../spiderchart/spiderchart.component';
 export class DecisionViewComponent implements OnInit {
 
     @ViewChild('spiderchart') spiderchart: SpiderchartComponent;
+    @ViewChild('feature') featureComponent: FeatureComponent;
 
     public loading: boolean = false;
     public creating: boolean = false;
@@ -36,6 +38,20 @@ export class DecisionViewComponent implements OnInit {
             '#FFD046',
             '#FF9B71',
         ];
+    }
+
+    @HostListener('window:keyup', ['$event'])
+    keyEvent(event: KeyboardEvent) {
+        if (!this.creating) {
+            return;
+        }
+        if (event.key === 'Enter') {
+            this.featureComponent.createFeature();
+        }
+
+        if (event.key === 'Escape') {
+            this.onCancelCreate();
+        }
     }
 
     public updateChart(): void {

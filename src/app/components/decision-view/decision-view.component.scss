@@ -15,7 +15,8 @@ app-decision-view {
     background-color: $GRAY_VERY_LIGHT;
     .comparison-name {
         font-weight: 600;
-        font-size: $FONT_SIZE_LARGE;
+        font-size: $FONT_SIZE_DEFAULT;
+        font-weight: 600;
         padding-left: 1rem;
     }
     .add-feature-button {

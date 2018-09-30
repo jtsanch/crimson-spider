@@ -3,27 +3,27 @@
         <span class="comparison-name">Comparison 1</span>
         <span class="add-feature-button" (click)="createFeature()">+</span>
     </header>
+    <app-feature
+            *ngIf="creating"
+            (onUpdateChart)="updateChart()"
+            (onSetEnabled)="setEnabled($event)"
+            (onCancelCreateFeature)="onCancelCreate()"
+            (onFeatureCreated)="onFeatureCreate()"
+            [color]="colors[user.features.length-1]"
+            [creating]="creating"
+            [feature]="feature">
+    </app-feature>
     <div class="option-question" *ngFor="let feature of user.features; let index = index">
         <app-feature
             (onUpdateChart)="updateChart()"
             (onSetEnabled)="setEnabled($event)"
             (onCancelCreateFeature)="onCancelCreate()"
             (onFeatureCreated)="onFeatureCreate()"
-            [creating]="creating"
             [color]="colors[index]"
             [feature]="feature">
         </app-feature>
     </div>
-    <app-feature
-        *ngIf="creating"
-        (onUpdateChart)="updateChart()"
-        (onSetEnabled)="setEnabled($event)"
-        (onCancelCreateFeature)="onCancelCreate()"
-        (onFeatureCreated)="onFeatureCreate()"
-        [color]="colors[user.features.length-1]"
-        [creating]="creating"
-        [feature]="feature">
-    </app-feature>
+
 </aside>
 <app-spiderchart
         *ngIf="user && user.features.length"

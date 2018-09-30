@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
 @import '../../styles/font';
 @import '../../styles/color';
+@import '../../styles/common';
 
 .feature {
     .header {
@@ -13,62 +12,96 @@
             padding-left: 1rem;
             #title {
                 height: 1.6rem;
+                margin-left: 1rem;
                 font-size: $FONT_SIZE_DEFAULT;
                 border-radius: 5px;
-                font-family: Roboto sans-serif;
                 border: 1px solid $GRAY_LIGHT;
-                padding: 3px;
+                padding: 4px 6px 4px 6px;
+            }
+        }
+        .title {
+            margin-left: 1rem;
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+            width: 30%;
+            justify-content: flex-end;
+            .submit {
+                color: $PRIMARY_COLOR;
+                font-size: $FONT_SIZE_SMALL;
+                padding-right: 3px;
+            }
+            .gray-divider {
+                height: 1.8rem;
+                background-color: $GRAY_VERY_LIGHT;
+                width: 3px;
+                display: inline-block;
+            }
+        }
+        .hide {
+            display: inline-block;
+            height: 1.6rem;
+            width: 2.2rem;
+            .icon-down {
+                background-image: url("assets/icons/icon-down-arrow.svg");
+                display: inline-block;
+                width: 12px;
+                height: 7px;
+                &.down {
+                    transform: rotate(180deg);
+                }
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
         .color {
-            border: 1px solid $GRAY_LIGHT;
             display: inline-block;
             height: 2rem;
-            width: 1rem;
-            margin-left: 1rem;
-            margin-right: 1rem;
-        }
-        .cancel {
-            font-size: $FONT_SIZE_LARGE;
-            font-weight: 600;
-            padding-right: 1rem;
-            color: $LIGHT_RED;
-            &:hover {
-                cursor: pointer;
-                color: $LIGHTER_RED;
-            }
+            width: 12px;
         }
     }
 }
-.question {
-    height: 3rem;
-    border-bottom: 1px solid $GRAY_LIGHT;
-    .factor-form {
-        display: flex;
+.questions {
+    position: relative;
+    .shroud {
+        position: absolute;
         height: 100%;
-        flex-direction: row;
-        .title {
-            flex: 1;
-            padding-left: 1rem;
-            font-size: $FONT_SIZE_DEFAULT;
+        width: 100%;
+        background-color: $BLACK;
+        opacity: .4;
+    }
+    .question {
+        height: 3rem;
+        border-bottom: 1px solid $GRAY_LIGHT;
+        .factor-form {
             display: flex;
-            align-items: center;
-            font-weight: 200;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-        .input-group {
-            display: flex;
-            flex: 5;
+            height: 100%;
             flex-direction: row;
-            justify-content: space-evenly;
-            .radio-group {
+            .title {
+                flex: 1;
+                padding-left: 1rem;
+                font-size: $FONT_SIZE_DEFAULT;
                 display: flex;
-                flex-direction: column;
                 align-items: center;
-                flex:1;
-                justify-content: space-around;
-                font-size: $FONT_SIZE_VERY_SMALL;
+                font-weight: 200;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            .input-group {
+                display: flex;
+                flex: 5;
+                flex-direction: row;
+                justify-content: space-evenly;
+                .radio-group {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    flex:1;
+                    justify-content: space-around;
+                    font-size: $FONT_SIZE_VERY_SMALL;
+                }
             }
         }
     }

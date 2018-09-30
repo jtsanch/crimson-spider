@@ -30,6 +30,7 @@ export class SpiderchartComponent implements OnInit, OnChanges {
         const labels = this.features[0].factors.map((factor) => {
             return factor.title;
         });
+        const color = Chart.helpers.color;
 
         let index = -1;
         const datasets = this.features.map((feature) => {
@@ -40,7 +41,9 @@ export class SpiderchartComponent implements OnInit, OnChanges {
                 }),
                 label: feature.title,
                 borderColor: this.colors[index],
-                fill: false,
+                backgroundColor: color(this.colors[index]).alpha(0.2).rgbString(),
+                fill: true,
+                pointType: 'triangle',
             };
         });
         this.myChart = new Chart(ctx, {

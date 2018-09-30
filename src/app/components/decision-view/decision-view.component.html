@@ -20,6 +20,7 @@
         (onSetEnabled)="setEnabled($event)"
         (onCancelCreateFeature)="onCancelCreate()"
         (onFeatureCreated)="onFeatureCreate()"
+        [color]="colors[user.features.length-1]"
         [creating]="creating"
         [feature]="feature">
     </app-feature>

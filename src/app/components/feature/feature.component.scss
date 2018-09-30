@@ -1,12 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 @import '../../styles/font';
 @import '../../styles/color';
 
-.color {
-    border: 1px solid $GRAY_LIGHT;
-    display: inline-block;
-    height: 2rem;
-    width: 1rem;
-    margin-left: 1rem;
+.feature {
+    .header {
+        background-color: $WHITE;
+        .input-group {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            #title {
+                height: 1.6rem;
+                font-size: $FONT_SIZE_DEFAULT;
+                border-radius: 5px;
+                font-family: Roboto sans-serif;
+                border: 1px solid $GRAY_LIGHT;
+                padding: 3px;
+            }
+        }
+        .color {
+            border: 1px solid $GRAY_LIGHT;
+            display: inline-block;
+            height: 2rem;
+            width: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        .cancel {
+            font-size: $FONT_SIZE_LARGE;
+            font-weight: 600;
+            padding-right: 1rem;
+            color: $LIGHT_RED;
+            &:hover {
+                cursor: pointer;
+                color: $LIGHTER_RED;
+            }
+        }
+    }
 }
 .question {
     height: 3rem;
@@ -16,10 +48,11 @@
         height: 100%;
         flex-direction: row;
         .title {
-            display: inline-block;
             flex: 1;
-            paddng-left: 1rem;
+            padding-left: 1rem;
             font-size: $FONT_SIZE_DEFAULT;
+            display: flex;
+            align-items: center;
             font-weight: 200;
             text-overflow: ellipsis;
             overflow: hidden;

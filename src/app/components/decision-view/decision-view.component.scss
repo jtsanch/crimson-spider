@@ -8,7 +8,7 @@ app-decision-view {
 
 .sidebar {
     width: 40%;
-    height: 100%;
+    height: calc(100vh - 3.4rem);
     overflow-y: auto;
     display: inline-block;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);

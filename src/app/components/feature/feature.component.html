@@ -1,15 +1,15 @@
-<div class="survey" *ngIf="feature">
+<div class="feature" *ngIf="feature">
     <header class="header" ngForm="featureForm">
         <div class="title" *ngIf="!creating">
             <span class="text">{{ feature.title }}</span>
             <div class="color" [style.background-color]="color"></div>
         </div>
         <div class="input-group" *ngIf="creating">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title" [(ngModel)]="feature.title">
+            <div class="color" [style.background-color]="color"></div>
+            <input type="text" placeholder="Feature Name" id="title" name="title" [(ngModel)]="feature.title">
         </div>
-        <button type="submit" *ngIf="creating" (click)="createFeature()">Submit</button>
-        <button type="button" *ngIf="creating" (click)="cancelCreateFeature()">Cancel</button>
+        <a class="submit" type="submit" *ngIf="creating" (click)="createFeature()">Create Feature</a>
+        <span class="cancel" *ngIf="creating" (click)="cancelCreateFeature()">X</span>
     </header>
     <div class="question" *ngFor="let factor of feature.factors; let index = index">
         <div class="factor-form" ngForm="factorForm">

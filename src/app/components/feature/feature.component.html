@@ -19,8 +19,10 @@
             <span class="submit">Click Enter to save</span>
             <span class="gray-divider"></span>
         </div>
-        <div class="hide" (click)="toggleRadioButtons()">
-            <span class="icon-down" [ngClass]="{ 'up': radioButtonsOn, 'down': !radioButtonsOn}"></span>
+        <div class="hide">
+            <div class="eye" (click)="toggleEnableFeature()" *ngIf="!creating" [ngClass]="{'blue': feature.enabled, 'gray': !feature.enabled}"></div>
+            <span class="gray-divider"></span>
+            <span class="icon-down"  (click)="toggleRadioButtons()" [ngClass]="{ 'up': radioButtonsOn, 'down': !radioButtonsOn}"></span>
         </div>
     </header>
     <div class="questions" *ngIf="radioButtonsOn">

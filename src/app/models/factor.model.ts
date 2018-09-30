@@ -29,7 +29,7 @@ export class FactorUtil {
             key: '',
             title: '',
             content: '',
-            chosenValue: '1',
+            chosenValue: '3',
             enabled: false,
             values,
         };

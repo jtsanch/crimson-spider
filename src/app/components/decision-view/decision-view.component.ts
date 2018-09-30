@@ -15,7 +15,7 @@ import { FeatureComponent } from '../feature/feature.component';
 export class DecisionViewComponent implements OnInit {
 
     @ViewChild('spiderchart') spiderchart: SpiderchartComponent;
-    @ViewChild('feature') featureComponent: FeatureComponent;
+    @ViewChild(FeatureComponent) featureComponent: FeatureComponent;
 
     public loading: boolean = false;
     public creating: boolean = false;
@@ -52,6 +52,11 @@ export class DecisionViewComponent implements OnInit {
         if (event.key === 'Escape') {
             this.onCancelCreate();
         }
+    }
+
+    public getCurrentColor(): string {
+        const index = this.user.features.length ? this.user.features.length + 1 : 0;
+        return this.colors[index];
     }
 
     public updateChart(): void {

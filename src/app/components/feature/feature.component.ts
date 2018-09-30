@@ -56,6 +56,11 @@ export class FeatureComponent implements OnInit, OnChanges {
         }
     }
 
+    public toggleEnableFeature() {
+        this.feature.enabled = !this.feature.enabled;
+        this.onUpdateChart.emit();
+    }
+
     public toggleRadioButtons() {
         if (this.creating) {
             this.onCancelCreateFeature.emit();
@@ -96,7 +101,7 @@ export class FeatureComponent implements OnInit, OnChanges {
             .then((factors) => {
                 this.feature.factors = factors.filter(factor => factor.enabled);
                 this.feature.factors = this.feature.factors.map((feature) => {
-                    feature.chosenValue = feature.chosenValue || '1';
+                    feature.chosenValue = feature.chosenValue || '3';
                     return feature;
                 });
                 this.loading = false;

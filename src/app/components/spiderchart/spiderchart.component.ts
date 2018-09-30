@@ -27,13 +27,16 @@ export class SpiderchartComponent implements OnInit, OnChanges {
         const elem = <HTMLCanvasElement>document.getElementById("myChart");
         const ctx = elem.getContext('2d');
 
-        const labels = this.features[0].factors.map((factor) => {
-            return factor.title;
-        });
+        const enabledFeatures = this.features.filter(feature => feature.enabled);
+        if (!enabledFeatures.length) {
+            return;
+        }
+
+        const labels = enabledFeatures[0].factors.map(factor => factor.title);
         const color = Chart.helpers.color;
 
         let index = -1;
-        const datasets = this.features.map((feature) => {
+        const datasets = enabledFeatures.map((feature) => {
             index++;
             return {
                 data: feature.factors.map((factor) => {
@@ -46,7 +49,22 @@ export class SpiderchartComponent implements OnInit, OnChanges {
                 pointType: 'triangle',
             };
         });
-        this.myChart = new Chart(ctx, {
+        datasets.push({
+            data: ['5', '5', '5', '5', '5'],
+            borderColor: 'transparent',
+            backgroundColor: 'transparent',
+            fill: false,
+            label: '',
+            pointType: 'none',
+        });
+        datasets.push({
+            data: ['0', '0', '0', '0', '0'],
+            borderColor: 'transparent',
+            backgroundColor: 'transparent',
+            fill: false,
+            label: '',
+            pointType: 'none',
+        });       this.myChart = new Chart(ctx, {
             type: 'radar',
             data: {
                 labels,

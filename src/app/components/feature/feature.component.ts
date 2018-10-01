@@ -33,10 +33,12 @@ export class FeatureComponent implements OnInit, OnChanges {
     @Output() public onCancelCreateFeature: EventEmitter<void> = new EventEmitter<void>();
     @Output() public onFeatureCreated: EventEmitter<void> = new EventEmitter<void>();
     @Output() public featureInCreationOutput: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public onDelete: EventEmitter<FeatureModel> = new EventEmitter<FeatureModel>();
 
     public loading: boolean = false;
     public radioButtonsOn: boolean = false;
     public featureInCreation: boolean = false;
+    public featureHovered: boolean = false;
 
     constructor(
         private _featureService: FeatureService,
@@ -56,6 +58,18 @@ export class FeatureComponent implements OnInit, OnChanges {
             this.initializeAndSetEnabledFactors();
             this.radioButtonsOn = true;
         }
+    }
+
+    public deleteFeature() {
+        this.onDelete.emit(this.feature);
+    }
+
+    public onHoverIn() {
+        this.featureHovered = true;
+    }
+
+    public onHoverOut() {
+        this.featureHovered = false;
     }
 
     public toggleEnableFeature() {
@@ -95,7 +109,7 @@ export class FeatureComponent implements OnInit, OnChanges {
     }
 
     public updateChart(): void {
-        if (!       this.feature.enabled) {
+        if (!this.feature.enabled) {
             return;
         }
         this.onUpdateChart.emit();

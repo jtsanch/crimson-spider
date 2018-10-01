@@ -60,6 +60,18 @@ export class DecisionViewComponent implements OnInit {
         return this.colors[index];
     }
 
+    public deleteFeature(feature: FeatureModel): void {
+        const index = this.user.features.findIndex(userFeature => {
+            return feature.title === userFeature.title;
+        });
+        this.user.features.splice(index,1);
+        this._userService.updateUser(this.user)
+            .then(() => {
+                this._alertService.showAlert('Feature Deleted', 'info');
+                this.reloadUser();
+            })
+    }
+
     public updateChart(): void {
         this._userService.updateUser(this.user);
         this.spiderchart.renderChart();

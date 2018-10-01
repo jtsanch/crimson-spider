@@ -47,28 +47,41 @@
         .hide {
             display: flex;
             height: 1.6rem;
-            width: 6rem;
+            width: 10rem;
             align-items: center;
             justify-content: space-evenly;
+            .actions {
+                padding: 0;
+                width: 45%;
+                justify-content: space-evenly;
+                .remove {
+                    display: inline-block;
+                    width: 24px;
+                    height: 14px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                .eye {
+                    display: inline-block;
+                    width: 24px;
+                    height: 14px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    &.gray {
+                        background-image: url("assets/icons/eye.png");
+                    }
+                    &.blue {
+                        background-image: url("assets/icons/eye-blue.png");
+                    }
+                }
+            }
             .gray-divider {
                 height: 1.8rem;
                 background-color: $GRAY_VERY_LIGHT;
                 width: 3px;
                 display: inline-block;
-            }
-            .eye {
-                display: inline-block;
-                width: 24px;
-                height: 14px;
-                &:hover {
-                    cursor: pointer;
-                }
-                &.gray {
-                    background-image: url("assets/icons/eye.png");
-                }
-                &.blue {
-                    background-image: url("assets/icons/eye-blue.png");
-                }
             }
             .icon-down {
                 background-image: url("assets/icons/icon-down-arrow.svg");

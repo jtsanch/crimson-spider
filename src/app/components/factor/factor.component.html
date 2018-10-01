@@ -1,26 +1,35 @@
-<div class="list-view" *ngIf="!editMode && !creating">
-    <div
-        class="factor-option"
-        *ngFor="let factor of factors; let index = index">
-        <div class="factor-header">Factor {{ index + 1 }}</div>
-        <div class="title">
-            Title: {{ factor.title }}
-        </div>
-        <div class="content">
-            Content: {{ factor.content}}
-        </div>
-        <div class="enabled" *ngIf="factor.enabled">
-            Enabled
-        </div>
-        <div class="values">
-            <div *ngFor="let value of factor.values">
-                {{ value.value }} - {{ value.text }}
-            </div>
-        </div>
-        <a class="edit-factor" (click)="enterEditMode(factor)">Edit Factor</a>
+<div class="header-view" *ngIf="!editMode && !creating">
+    <span class="title">Factors</span>
+    <div class="actions">
+        <a class="create-factor" *ngIf="!editMode && !creating" (click)="enterCreateMode()">Create Factor</a>
     </div>
-    <button class="create-factor" (click)="enterCreateMode()">Create Factor</button>
 </div>
+<table class="list-view" *ngIf="!editMode && !creating">
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>factors</th>
+    </tr>
+    <tr
+        class="factor-option"
+        [ngClass]="{'enabled': factor.enabled}"
+        *ngFor="let factor of factors; let index = index">
+            <td class="title">
+                Title: {{ factor.title }}
+            </td>
+            <td class="content">
+                Content: {{ factor.content}}
+            </td>
+            <td class="values">
+                <div *ngFor="let value of factor.values">
+                    {{ value.value }} - {{ value.text }}
+                </div>
+            </td>
+            <td class="actions">
+                <a class="edit-factor" (click)="enterEditMode(factor)">Edit Factor</a>
+            </td>
+    </tr>
+</table>
 <div *ngIf="editMode || creating" class="factor-creation" ngForm="factorForm">
     <div class="input-group">
         <label for="title">Title:</label>

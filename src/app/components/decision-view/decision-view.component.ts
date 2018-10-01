@@ -61,6 +61,7 @@ export class DecisionViewComponent implements OnInit {
     }
 
     public updateChart(): void {
+        this._userService.updateUser(this.user);
         this.spiderchart.renderChart();
     }
 

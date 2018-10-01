@@ -42,6 +42,7 @@ export class AuthRouteGuard implements CanActivate {
         if (isNotLoggedInRequired) {
             return this._auth.isLoggedIn()
                 .then((loggedIn) => {
+                    this._router.navigate(['/comparison']);
                     return !loggedIn;
                 });
         }

@@ -112,6 +112,7 @@
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid $GRAY_LIGHT;
+    padding: 12px 0 12px 0;
     &.open {
         animation-name: slideIn;
         animation-duration: 1s;
@@ -121,6 +122,7 @@
         animation-name: slideOut;
         animation-duration: 1s;
         height: 0;
+        padding: 0;
     }
     .shroud {
         position: absolute;

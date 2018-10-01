@@ -1,0 +1,30 @@
+@import '../../styles/color';
+@import '../../styles/font';
+
+.header-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem 0 2rem;
+    height: 2rem;
+    .title {
+        font-size: $FONT_SIZE_LARGE;
+    }
+}
+table {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    th,
+    td {
+        border-top: 1px solid $GRAY_VERY_LIGHT;
+        border-bottom: 1px solid $GRAY_VERY_LIGHT;
+        padding: 0;
+        &:hover {
+            border-top: 1px solid $GRAY_LIGHT;
+            border-bottom: 1px solid $GRAY_LIGHT;
+        }
+    }
+
+}

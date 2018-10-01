@@ -10,10 +10,12 @@ app-decision-view {
     width: 100vw;
     position: absolute;
     top: 3rem;
+    z-index:-1;
 }
 .sidebar {
     width: 40%;
     height: calc(100vh - 3.4rem);
+    z-index: 10;
     overflow-y: auto;
     display: inline-block;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);

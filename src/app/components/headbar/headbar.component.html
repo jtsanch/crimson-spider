@@ -1,5 +1,5 @@
 <header>
-    <div class="logo">Impact Profile</div>
+    <div class="logo" (click)="goToComparison()">Impact Profile</div>
     <div class="actions">
         <div class="user-profile">
             <span class="user-details" *ngIf="!!user">{{ user.email }}</span>

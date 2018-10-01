@@ -13,9 +13,18 @@
     }
 }
 table {
-    height: 100%;
+    position: absolute;
+    top: 4rem;
+    height: calc(100vh - 5rem);
+    overflow-y: auto;
+    overflow: hidden;;
     width: 100%;
     padding: 2rem;
+    tr {
+        &.enabled {
+            background-color: $GREEN_LIGHT;
+        }
+    }
     th,
     td {
         border-top: 1px solid $GRAY_VERY_LIGHT;

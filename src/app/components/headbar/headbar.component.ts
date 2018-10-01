@@ -38,6 +38,9 @@ export class HeadbarComponent implements OnInit {
         });
     }
 
+    public goToComparison() {
+        this._router.navigate(['comparison']);
+    }
     public logout() {
         this._authService.logout()
             .then(() => {

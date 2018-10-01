@@ -16,6 +16,9 @@ header {
         color: $PRIMARY_COLOR;
         font-size: $FONT_SIZE_DEFAULT;
         font-weight: 600;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .actions {
         padding-right: 1.4rem;

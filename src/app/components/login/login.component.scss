@@ -1,4 +1,5 @@
 @import '../../styles/font';
+@import '../../styles/color';
 
 .main-loader {
     width: 100%;
@@ -13,6 +14,7 @@
 .login-section {
     height: 100%;
     width: 100%;
+    background-image: url('assets/images/background-login.png');
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +25,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: $WHITE;
+        padding: 3rem;
+        opacity: .75rem;
     }
     .title {
         font-size: $FONT_SIZE_LARGE;

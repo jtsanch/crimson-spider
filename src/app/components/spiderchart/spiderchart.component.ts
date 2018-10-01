@@ -32,9 +32,7 @@ export class SpiderchartComponent implements OnInit, OnChanges {
         }
 
         const labels = enabledFeatures[0].factors.map((factor) => {
-            return {
-                title: factor.title
-            };
+            return factor.title;
         });
         const color = Chart.helpers.color;
 
@@ -75,13 +73,9 @@ export class SpiderchartComponent implements OnInit, OnChanges {
                 datasets,
             },
             options: {
-                legend: {
-                    labels: {
-                        // This more specific font property overrides the global property
-                        fontColor: 'black',
-                        defaultFontFamily: 'Roboto sans-serif',
-                        defaultFontSize: '28px,'
-                    },
+                pointLabelFontSize: '100px',
+                title: {
+                    fontSize: 32,
                 },
             },
         });

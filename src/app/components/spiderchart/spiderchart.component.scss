@@ -1,3 +1,5 @@
+@import '../../styles/font';
+
 app-spiderchart {
     width: 600px;
     height: 600px;
@@ -8,4 +10,5 @@ app-spiderchart {
     height: 500px;
     width: 500px;
     padding-left: 4rem;
+    font-size: $FONT_SIZE_DEFAULT !important;
 }

@@ -95,6 +95,9 @@ export class FeatureComponent implements OnInit, OnChanges {
     }
 
     public updateChart(): void {
+        if (!       this.feature.enabled) {
+            return;
+        }
         this.onUpdateChart.emit();
     }
 

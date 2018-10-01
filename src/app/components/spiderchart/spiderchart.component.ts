@@ -26,13 +26,16 @@ export class SpiderchartComponent implements OnInit, OnChanges {
     public renderChart() {
         const elem = <HTMLCanvasElement>document.getElementById("myChart");
         const ctx = elem.getContext('2d');
-
         const enabledFeatures = this.features.filter(feature => feature.enabled);
         if (!enabledFeatures.length) {
             return;
         }
 
-        const labels = enabledFeatures[0].factors.map(factor => factor.title);
+        const labels = enabledFeatures[0].factors.map((factor) => {
+            return {
+                title: factor.title
+            };
+        });
         const color = Chart.helpers.color;
 
         let index = -1;
@@ -64,11 +67,22 @@ export class SpiderchartComponent implements OnInit, OnChanges {
             fill: false,
             label: '',
             pointType: 'none',
-        });       this.myChart = new Chart(ctx, {
+        });
+        this.myChart = new Chart(ctx, {
             type: 'radar',
             data: {
                 labels,
                 datasets,
+            },
+            options: {
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        fontColor: 'black',
+                        defaultFontFamily: 'Roboto sans-serif',
+                        defaultFontSize: '28px,'
+                    },
+                },
             },
         });
     }

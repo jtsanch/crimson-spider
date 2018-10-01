@@ -30,8 +30,9 @@
         .actions {
             display: flex;
             align-items: center;
-            width: 30%;
-            justify-content: flex-end;
+            width: 14rem;
+            margin-left: 1rem;
+            padding: 0;
             .submit {
                 color: $PRIMARY_COLOR;
                 font-size: $FONT_SIZE_SMALL;
@@ -47,13 +48,13 @@
         .hide {
             display: flex;
             height: 1.6rem;
-            width: 10rem;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: flex-end;
             .actions {
                 padding: 0;
-                width: 45%;
                 justify-content: space-evenly;
+                width: 4rem;
+                margin-right: 1rem;
                 .remove {
                     display: inline-block;
                     width: 24px;
@@ -84,6 +85,8 @@
                 display: inline-block;
             }
             .icon-down {
+                margin-left: 1.2rem;
+                margin-right: 1.2rem;
                 background-image: url("assets/icons/icon-down-arrow.svg");
                 display: inline-block;
                 width: 12px;
@@ -106,7 +109,7 @@
 
 @keyframes slideOut {
     from {
-        height: 15rem;
+        height: 18rem;
     }
     to {
         height: 0;
@@ -117,7 +120,7 @@
         height: 0;
     }
     to {
-        height: 15rem;
+        height: 18rem;
     }
 }
 

@@ -19,7 +19,7 @@
             <span class="submit">Click Enter to save</span>
         </div>
         <div class="hide">
-            <div class="actions">
+            <div class="actions" *ngIf="!creating">
                 <div class="remove" (click)="deleteFeature()" *ngIf="!creating && featureHovered">X</div>
                 <div class="eye" (click)="toggleEnableFeature()" *ngIf="!creating && featureHovered" [ngClass]="{'blue': feature.enabled, 'gray': !feature.enabled}"></div>
             </div>

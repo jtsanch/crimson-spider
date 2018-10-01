@@ -15,6 +15,7 @@ export class UserService {
 
     public getCurrentUser(): Promise<any> {
         return new Promise((resolve) => {
+            localStorage.removeItem('firebase:previous_websocket_failure');
             this.afAuth.auth.onAuthStateChanged(user => {
                 const userUuid = user.uid;
                 this._getUser(userUuid)

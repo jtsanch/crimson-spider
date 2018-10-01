@@ -4,6 +4,7 @@
         class="login-user"
         ngForm="loginForm"
         *ngIf="!creating && !loading">
+        <div class="login-shroud"></div>
         <span class="title">Crimson Spider</span>
         <div class="input-group">
             <input
@@ -31,6 +32,7 @@
         class="create-user"
         ngForm="createForm"
         *ngIf="creating && !loading">
+        <div class="login-shroud"></div>
         <span class="title">Crimson Spider</span>
         <div class="input-group">
             <input

@@ -35,13 +35,23 @@
                 <div class="input-group">
                     <div class="radio-group">
                         <input
+                                id="radio-zero-{{ index }}"
+                                type="radio"
+                                name="value-zero-{{ index }}"
+                                [(ngModel)]="feature.factors[index].chosenValue"
+                                value="0"
+                                (change)="updateChart()">
+                        <label for="radio-zero-{{ index }}">{{factor.values[0].text}}</label>
+                    </div>
+                    <div class="radio-group">
+                        <input
                                 id="radio-one-{{ index }}"
                                 type="radio"
                                 name="value-one-{{ index }}"
                                 [(ngModel)]="feature.factors[index].chosenValue"
                                 value="1"
                                 (change)="updateChart()">
-                        <label for="radio-one-{{ index }}">{{factor.values[0].text}}</label>
+                        <label for="radio-one-{{ index }}">{{factor.values[1].text}}</label>
                     </div>
                     <div class="radio-group">
                         <input
@@ -51,7 +61,7 @@
                                 [(ngModel)]="feature.factors[index].chosenValue"
                                 value="2"
                                 (change)="updateChart()">
-                        <label for="radio-two-{{ index }}">{{factor.values[1].text}}</label>
+                        <label for="radio-two-{{ index }}">{{factor.values[2].text}}</label>
                     </div>
                     <div class="radio-group">
                         <input
@@ -61,7 +71,7 @@
                                 [(ngModel)]="feature.factors[index].chosenValue"
                                 value="3"
                                 (change)="updateChart()">
-                        <label for="radio-three-{{ index }}">{{factor.values[2].text}}</label>
+                        <label for="radio-three-{{ index }}">{{factor.values[3].text}}</label>
                     </div>
                     <div class="radio-group">
                         <input
@@ -71,7 +81,7 @@
                                 [(ngModel)]="feature.factors[index].chosenValue"
                                 value="4"
                                 (change)="updateChart()">
-                        <label for="radio-four-{{ index }}">{{factor.values[3].text}}</label>
+                        <label for="radio-four-{{ index }}">{{factor.values[4].text}}</label>
                     </div>
                     <div class="radio-group">
                         <input
@@ -81,7 +91,7 @@
                                 [(ngModel)]="feature.factors[index].chosenValue"
                                 value="5"
                                 (change)="updateChart()">
-                        <label for="radio-five-{{ index }}">{{factor.values[4].text}}</label>
+                        <label for="radio-five-{{ index }}">{{factor.values[5].text}}</label>
                     </div>
                 </div>
             </div>

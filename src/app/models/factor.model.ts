@@ -22,6 +22,7 @@ export interface FactorRequestModel {
 export class FactorUtil {
     static getEmptyObject(): FactorModel {
         const values: FactorValue[] = [];
+        values.push({value: 0, text: 'N/A'});
         for (let i = 1; i <= 5; i++) {
             values.push({value: i, text: ''});
         }
@@ -29,7 +30,7 @@ export class FactorUtil {
             key: '',
             title: '',
             content: '',
-            chosenValue: '3',
+            chosenValue: '0',
             enabled: false,
             values,
         };

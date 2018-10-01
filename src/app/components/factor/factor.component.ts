@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FactorModel, FactorUtil } from '../../models/factor.model';
+import { FactorModel, FactorUtil, FactorValue } from '../../models/factor.model';
 import { FactorService } from '../../services/factor/factor.service';
 import { AngularFireList } from '@angular/fire/database';
 import { AlertService } from '../alert/alert.service';
@@ -55,6 +55,10 @@ export class FactorComponent implements OnInit {
                     this.creating = false;
                 });
         } else {
+            if (this.factor.values.length === 5) {
+                this.factor.values = [{value: 0, text: 'N/A'}, ...this.factor.values];
+            }
+            this.factor.chosenValue = '0';
             this._factorService.updateFactor(this.factor)
                 .then(() => {
                     this.loading = false;

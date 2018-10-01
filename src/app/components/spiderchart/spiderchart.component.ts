@@ -50,22 +50,6 @@ export class SpiderchartComponent implements OnInit, OnChanges {
                 pointType: 'triangle',
             };
         });
-        datasets.push({
-            data: ['5', '5', '5', '5', '5'],
-            borderColor: 'transparent',
-            backgroundColor: 'transparent',
-            fill: false,
-            label: '',
-            pointType: 'none',
-        });
-        datasets.push({
-            data: ['0', '0', '0', '0', '0'],
-            borderColor: 'transparent',
-            backgroundColor: 'transparent',
-            fill: false,
-            label: '',
-            pointType: 'none',
-        });
         this.myChart = new Chart(ctx, {
             type: 'radar',
             data: {
@@ -73,10 +57,35 @@ export class SpiderchartComponent implements OnInit, OnChanges {
                 datasets,
             },
             options: {
-                pointLabelFontSize: '100px',
-                title: {
-                    fontSize: 32,
+                maintainAspectRatio: true,
+                spanGaps: false,
+                elements: {
+                    line: {
+                        tension: 0.000001
+                    },
                 },
+                scale: {
+                    pointLabels: {
+                        fontSize: 20,
+                    },
+                    yAxis: {
+                        ticks: {
+                            padding: 10,
+                        },
+                    },
+                    ticks: {
+                        stepSize: 1,
+                        suggestedMin: 0,
+                        suggestedMax: 5,
+                        fontSize: 18,
+                    }
+                },
+                legend: {
+                    position: 'right',
+                    labels: {
+                        fontSize: 16,
+                    }
+                }
             },
         });
     }

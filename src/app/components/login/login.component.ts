@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { UserLoginModel, UserLoginUtil } from '../../models/user-login.model';
 import { UserCreateModel, UserCreateUtil } from '../../models/user-create.model';
 import { AuthService } from '../../services/auth/auth.service';
@@ -27,6 +27,17 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
         this.userLogin = UserLoginUtil.getEmptyObject();
         this.userCreate = UserCreateUtil.getEmptyObject();
+    }
+    @HostListener('window:keyup', ['$event'])
+    keyEvent(event: KeyboardEvent) {
+        if (event.key !== 'Enter') {
+            return;
+        }
+        if (this.creating) {
+            this.createUser();
+        } else {
+            this.loginUser();
+        }
     }
 
     loginUser() {

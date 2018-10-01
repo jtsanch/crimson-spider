@@ -17,7 +17,6 @@
         </div>
         <div class="actions" *ngIf="creating">
             <span class="submit">Click Enter to save</span>
-            <span class="gray-divider"></span>
         </div>
         <div class="hide">
             <div class="eye" (click)="toggleEnableFeature()" *ngIf="!creating" [ngClass]="{'blue': feature.enabled, 'gray': !feature.enabled}"></div>

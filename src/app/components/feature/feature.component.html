@@ -20,7 +20,7 @@
         </div>
         <div class="hide">
             <div class="actions" *ngIf="!creating">
-                <div class="remove" (click)="deleteFeature()" *ngIf="!creating && featureHovered">X</div>
+                <div class="remove" (click)="deleteFeature()" *ngIf="!creating && featureHovered"></div>
                 <div class="eye" (click)="toggleEnableFeature()" *ngIf="!creating && featureHovered" [ngClass]="{'blue': feature.enabled, 'gray': !feature.enabled}"></div>
             </div>
             <span class="gray-divider"></span>

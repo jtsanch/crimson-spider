@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / off / add hover</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M14,14 L14,7 L18,7 L18,14 L25,14 L25,18 L18,18 L18,25 L14,25 L14,18 L7,18 L7,14 L14,14 Z" id="path-1"></path>
+    </defs>
+    <g id="icon-/-off-/-add-hover" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_add_off">
+            <rect id="area" x="0" y="0" width="32" height="32"></rect>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="plus" fill="#0D7DEE" transform="translate(16.000000, 16.000000) rotate(90.000000) translate(-16.000000, -16.000000) " xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

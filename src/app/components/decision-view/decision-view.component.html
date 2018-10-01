@@ -27,9 +27,11 @@
         </app-feature>
     </div>
 </aside>
-<app-spiderchart
-        *ngIf="user && user.features.length"
-        #spiderchart
-        [colors]="colors"
-        [features]="user.features"></app-spiderchart>
-<app-loader class="main-loader" [loading]="loading"></app-loader>
+<div class="spiderchart" *ngIf="user && user.features.length">
+    <div class="title">Comparison 1</div>
+    <app-spiderchart
+            #spiderchart
+            [colors]="colors"
+            [features]="user.features"></app-spiderchart>
+    <app-loader class="main-loader" [loading]="loading"></app-loader>
+</div>

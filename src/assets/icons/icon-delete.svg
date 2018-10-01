@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / off / delete</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M9.4,11.3 L8,11.3 L8,9.8706 C8,8.3425 9.2425,7.1 10.7706,7.1 L13.6,7.1 L13.6,6.6695 C13.6,5.749 14.349,5 15.2695,5 L17.5305,5 C18.451,5 19.2,5.749 19.2,6.6695 L19.2,7.1 L22.0301,7.1 C23.5575,7.1 24.8,8.3425 24.8,9.8706 L24.8,11.3 L23.4,11.3 L23.4,22.9291 C23.4,24.6224 22.0224,26 20.3291,26 L12.4709,26 C10.7776,26 9.4,24.6224 9.4,22.9291 L9.4,11.3 Z M10.8,11.3 L10.8,22.9291 C10.8,23.8503 11.5497,24.6 12.4709,24.6 L20.3298,24.6 C21.2503,24.6 22,23.8503 22,22.9291 L22,11.3 L10.8,11.3 Z M15,7.1 L17.8,7.1 L17.8,6.6695 C17.8,6.5211 17.6789,6.4 17.5305,6.4 L15.2695,6.4 C15.1211,6.4 15,6.5211 15,6.6695 L15,7.1 Z M9.4,9.9 L23.4,9.8706 C23.4,9.1146 22.7854,8.5 22.0294,8.5 L10.7706,8.5 C10.0146,8.5 9.4,9.1146 9.4,9.8706 L9.4,9.9 Z M12.9,14.1 L14.3,14.1 L14.3,21.1 L12.9,21.1 L12.9,14.1 Z M15.7,14.1 L17.1,14.1 L17.1,21.1 L15.7,21.1 L15.7,14.1 Z M18.5,14.1 L19.9,14.1 L19.9,21.1 L18.5,21.1 L18.5,14.1 Z" id="path-1"></path>
+    </defs>
+    <g id="icon-/-off-/-delete" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_delete_off">
+            <rect id="Area" x="0" y="0" width="32" height="32"></rect>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Shape" fill="#667080" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

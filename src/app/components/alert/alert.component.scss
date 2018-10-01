@@ -1,4 +1,5 @@
 @import '../../styles/color';
+@import '../../styles/font';
 
 .alert {
     position: absolute;
@@ -8,6 +9,7 @@
     left: 50%;
     top: 3.2rem;
     padding: 5px 25px 5px 25px;
+    font-size: $FONT_SIZE_LARGE;
     border-radius: 5px;
     color: white;
     font-weight: 600;

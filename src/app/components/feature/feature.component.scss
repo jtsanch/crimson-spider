@@ -5,6 +5,7 @@
 .feature {
     .header {
         background-color: $WHITE;
+        border: none !important;
         .input-group {
             height: 100%;
             display: flex;
@@ -40,7 +41,7 @@
             }
             .gray-divider {
                 height: 1.8rem;
-                background-color: $GRAY_VERY_LIGHT;
+                background-color: $GRAY_ALT_LIGHT;
                 width: 3px;
                 display: inline-block;
             }
@@ -52,29 +53,35 @@
             justify-content: flex-end;
             .actions {
                 padding: 0;
-                justify-content: space-evenly;
+                justify-content: space-evey;
                 width: 4rem;
                 margin-right: 1rem;
                 .remove {
                     display: inline-block;
-                    width: 24px;
-                    height: 14px;
+                    width: 2rem;
+                    height: 2rem;
+                    background-image: url("assets/icons/icon-delete.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
                     &:hover {
                         cursor: pointer;
+                        background-image: url("assets/icons/icon-delete-hover.svg");
                     }
                 }
                 .eye {
                     display: inline-block;
-                    width: 24px;
-                    height: 14px;
+                    width: 2rem;
+                    height: 2rem;
+                    background-repeat: no-repeat;
+                    background-position: center;
                     &:hover {
                         cursor: pointer;
                     }
                     &.gray {
-                        background-image: url("assets/icons/eye.png");
+                        background-image: url("assets/icons/icon-eye-hide.svg");
                     }
                     &.blue {
-                        background-image: url("assets/icons/eye-blue.png");
+                        background-image: url("assets/icons/icon-eye-on.svg");
                     }
                 }
             }
@@ -89,10 +96,13 @@
                 margin-right: 1.2rem;
                 background-image: url("assets/icons/icon-down-arrow.svg");
                 display: inline-block;
-                width: 12px;
-                height: 7px;
+                width: 2rem;
+                height: 2rem;
+                background-repeat: no-repeat;
+                background-position: center;
                 &.down {
-                    transform: rotate(180deg);
+                    background-image: url("assets/icons/icon-collapse.svg");
+                    background-position: center;
                 }
                 &:hover {
                     cursor: pointer;
@@ -127,7 +137,6 @@
 .questions {
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid $GRAY_LIGHT;
     &.open {
         animation-name: slideIn;
         animation-duration: 1s;

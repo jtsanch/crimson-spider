@@ -35,5 +35,5 @@ export const appRoutes: Routes = [
             }
         }
     },
-    { path: '**', redirectTo: '/comparison' }
+    { path: '**', redirectTo: '/login' }
 ];

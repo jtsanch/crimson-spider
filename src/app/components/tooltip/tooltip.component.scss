@@ -1,0 +1,42 @@
+@import '../../styles/color';
+
+app-tooltip {
+    position: absolute;
+    display: inline-block;
+    left: 25%;
+    top: -2rem;
+    height: 1.4rem;
+    overflow: hidden;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+    background-color: $GRAY_LIGHT;
+    color: white;
+    padding: 5px;
+    &.close {
+        opacity: 0;
+        animation-name: fadyAway;
+        animatino-duration: 1s;
+    }
+    &.open {
+        animation-name: fadeIn;
+        opacity: 1;
+        animation-duration: .3s;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeAway {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

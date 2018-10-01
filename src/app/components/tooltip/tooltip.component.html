@@ -1,3 +1,8 @@
-<p>
-  tooltip works!
-</p>
+<div
+    class="tooltip"
+    #tooltip
+    [ngClass]="{'open': visible, 'close': !visible}"
+    (mouseover)="showTooltip()"
+    (mouseout)="hideTooltip()">
+     {{ content }}
+</div>

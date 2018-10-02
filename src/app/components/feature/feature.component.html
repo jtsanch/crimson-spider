@@ -31,7 +31,9 @@
         <div class="shroud" *ngIf="creating"></div>
         <div class="question" *ngFor="let factor of feature.factors; let index = index">
             <div class="factor-form" ngForm="factorForm">
-                <div class="title">{{ factor.title }}</div>
+                <app-tooltip class="tooltip-title" [content]="factor.content">
+                    <div class="title">{{ factor.title }}</div>
+                </app-tooltip>
                 <div class="input-group">
                     <div class="radio-group">
                         <input

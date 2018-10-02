@@ -15,18 +15,26 @@
 table {
     position: absolute;
     top: 4rem;
-    height: calc(100vh - 5rem);
-    overflow-y: auto;
-    overflow: hidden;;
-    width: 100%;
+    height: calc(100vh - 10rem);
+    overflow: hidden;
+    display: block;
+    width: calc(100vw - 5rem);
     padding: 2rem;
+    tbody {
+        width: calc(100vw - 5rem);
+        height: calc(100vh - 10rem);
+        overflow-y: auto;
+        display: block;
+    }
     tr {
+        width: calc(100vw - 5rem);
         &.enabled {
             background-color: $GREEN_LIGHT;
         }
     }
     th,
     td {
+        width: calc(100vw - 5rem);
         border-top: 1px solid $GRAY_VERY_LIGHT;
         border-bottom: 1px solid $GRAY_VERY_LIGHT;
         padding: 0;

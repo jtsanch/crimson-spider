@@ -1,26 +1,57 @@
 @import '../../styles/color';
+@import '../../styles/font';
 
 app-tooltip {
-    position: absolute;
-    display: inline-block;
-    left: 25%;
-    top: -2rem;
-    height: 1.4rem;
-    overflow: hidden;
-    border-radius: 5px;
-    text-overflow: ellipsis;
-    background-color: $GRAY_LIGHT;
-    color: white;
-    padding: 5px;
-    &.close {
-        opacity: 0;
-        animation-name: fadyAway;
-        animatino-duration: 1s;
+    display: flex;
+    align-items: center;
+}
+.container {
+    position: relative;
+    &:hover {
+        cursor: default;
     }
-    &.open {
-        animation-name: fadeIn;
-        opacity: 1;
-        animation-duration: .3s;
+    .tooltip-triangle {
+        width: 0;
+        height: 0;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        border-right: 14px solid $GRAY_DARK;
+        position: absolute;
+        left: 100%;
+        top: -3px;
+        &.close {
+            opacity: 0;
+            animation-name: fadyAway;
+            animation-duration: 1s;
+        }
+        &.open {
+            animation-name: fadeIn;
+            opacity: 1;
+            animation-duration: .5s;
+        }
+    }
+    .tooltip {
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        border-radius: 5px;
+        text-overflow: ellipsis;
+        background-color: $GRAY_DARK;
+        color: white;
+        padding: 5px 10px 5px 5px;
+        font-size: $FONT_SIZE_SMALL;
+        top: -25%;
+        left: 110%;
+        &.close {
+            opacity: 0;
+            animation-name: fadyAway;
+            animation-duration: 1s;
+        }
+        &.open {
+            animation-name: fadeIn;
+            opacity: 1;
+            animation-duration: .5s;
+        }
     }
 }
 

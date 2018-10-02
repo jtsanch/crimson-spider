@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { FactorServiceModule } from '../../services/factor/factor.service.module';
 import { FeatureServiceModule } from '../../services/feature/feature-service.module';
 import { AlertModule } from '../alert/alert.module';
+import { TooltipModule } from '../tooltip/tooltip.module';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { AlertModule } from '../alert/alert.module';
         FactorServiceModule,
         FeatureServiceModule,
         AlertModule,
+        TooltipModule,
     ],
     exports: [
         FeatureComponent,

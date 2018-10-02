@@ -53,24 +53,28 @@
         <textarea id="content" [(ngModel)]="factor.content" name="content"></textarea>
     </div>
     <div class="input-group">
-        <label for="factor-value-one">Factor Value {{ factor.values[0].value }}</label>
-        <input id="factor-value-one" type="text" name="factor-one" [(ngModel)]="factor.values[0].text">
+        <label for="factor-value-zero">Factor Value {{ factor.values[0].value }}</label>
+        <input id="factor-value-zero" type="text" name="factor-zero" [(ngModel)]="factor.values[0].text">
     </div>
     <div class="input-group">
-        <label for="factor-value-two">Factor Value {{ factor.values[1].value }}</label>
-        <input id="factor-value-two" type="text" name="factor-two" [(ngModel)]="factor.values[1].text">
+        <label for="factor-value-one">Factor Value {{ factor.values[1].value }}</label>
+        <input id="factor-value-one" type="text" name="factor-one" [(ngModel)]="factor.values[1].text">
     </div>
     <div class="input-group">
-        <label for="factor-value-three">Factor Value {{ factor.values[2].value }}</label>
-        <input id="factor-value-three" type="text" name="factor-three" [(ngModel)]="factor.values[2].text">
+        <label for="factor-value-two">Factor Value {{ factor.values[2].value }}</label>
+        <input id="factor-value-two" type="text" name="factor-two" [(ngModel)]="factor.values[2].text">
     </div>
     <div class="input-group">
-        <label for="factor-value-four">Factor Value {{ factor.values[3].value }}</label>
-        <input id="factor-value-four" type="text" name="factor-four" [(ngModel)]="factor.values[3].text">
+        <label for="factor-value-three">Factor Value {{ factor.values[3].value }}</label>
+        <input id="factor-value-three" type="text" name="factor-three" [(ngModel)]="factor.values[3].text">
     </div>
     <div class="input-group">
-        <label for="factor-value-five">Factor Value {{ factor.values[4].value }}</label>
-        <input id="factor-value-five" type="text" name="factor-five" [(ngModel)]="factor.values[4].text">
+        <label for="factor-value-four">Factor Value {{ factor.values[4].value }}</label>
+        <input id="factor-value-four" type="text" name="factor-four" [(ngModel)]="factor.values[4].text">
+    </div>
+    <div class="input-group">
+        <label for="factor-value-five">Factor Value {{ factor.values[5].value }}</label>
+        <input id="factor-value-five" type="text" name="factor-five" [(ngModel)]="factor.values[5].text">
     </div>
     <button type="submit" (click)="submitFactor()">Submit Factor</button>
     <button type="button" (click)="exitSubmitMode()">Cancel</button>

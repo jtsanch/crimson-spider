@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, HostListener, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import * as Chart from '../../../../node_modules/chart.js/dist/Chart.js';
 import { FeatureModel } from '../../models/feature.model';
 
@@ -12,6 +12,8 @@ export class SpiderchartComponent implements OnInit, OnChanges {
     @Input() public features: FeatureModel[];
     @Input() public colors: string[];
 
+    public chartWidth: number;
+    public chartHeight: number;
     public myChart: any;
 
     constructor() {
@@ -57,8 +59,11 @@ export class SpiderchartComponent implements OnInit, OnChanges {
                 datasets,
             },
             options: {
-                maintainAspectRatio: true,
                 spanGaps: false,
+                responsive: true,
+                maintainAspectRatio: false,
+                fullWidth: true,
+                fullHeight: true,
                 elements: {
                     line: {
                         tension: 0.000001
@@ -89,7 +94,16 @@ export class SpiderchartComponent implements OnInit, OnChanges {
             },
         });
     }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event?) {
+        this.chartHeight = parseInt(''+window.innerHeight*.8);
+        this.chartWidth = parseInt(''+window.innerWidth*.1);
+        this.myChart.update();
+    }
+
     ngOnInit() {
+        this.onResize();
         this.renderChart();
     }
 

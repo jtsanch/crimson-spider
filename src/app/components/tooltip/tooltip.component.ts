@@ -5,10 +5,9 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
     templateUrl: './tooltip.component.html',
     styleUrls: ['./tooltip.component.scss']
 })
-export class TooltipComponent implements OnInit {
+export class TooltipComponent {
 
     @Input() public content: string;
-    @Input() public element: ElementRef;
 
     @ViewChild('tooltip') tooltip: ElementRef;
 
@@ -17,17 +16,11 @@ export class TooltipComponent implements OnInit {
     constructor() {
     }
 
-    ngOnInit() {
-        this.element.nativeElement.append(this.tooltip.nativeElement);
-    }
-
     public showTooltip() {
         this.visible = true;
     }
 
     public hideTooltip() {
-        setTimeout(() => {
-            this.visible = false;
-        }, 1500);
+        this.visible = false;
     }
 }

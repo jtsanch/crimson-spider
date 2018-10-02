@@ -90,6 +90,18 @@ export class DecisionViewComponent implements OnInit {
         this.creating = false;
     }
 
+    public drag(event) {
+        console.log(event)
+    }
+
+    public drop(event) {
+        console.log(event)
+    }
+
+    public allowDrop(event) {
+        console.log(event);
+    }
+
     public createFeature() {
         this.creating = true;
         this.feature = FeatureUtil.getEmptyObject();

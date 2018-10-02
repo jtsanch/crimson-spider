@@ -1,8 +1,8 @@
 <div
-    class="tooltip"
-    #tooltip
-    [ngClass]="{'open': visible, 'close': !visible}"
-    (mouseover)="showTooltip()"
-    (mouseout)="hideTooltip()">
-     {{ content }}
+    class="container">
+    <div class="content" (mouseover)="showTooltip()" (mouseout)="hideTooltip()">
+        <ng-content></ng-content>
+    </div>
+    <div class="tooltip-triangle" [ngClass]="{'open': visible, 'close': !visible}"></div>
+    <div class="tooltip" [ngClass]="{'open': visible, 'close': !visible}">{{ content }}</div>
 </div>

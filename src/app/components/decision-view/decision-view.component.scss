@@ -52,5 +52,13 @@ app-decision-view {
             cursor: pointer;
             color: $GRAY_LIGHT;
         }
+        &.disabled {
+            color: $GRAY_LIGHT;
+            cursor: not-allowed;
+            &:hover {
+                color: $GRAY_LIGHT;
+                cursor: not-allowed;
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 <aside class="comparison sidebar" *ngIf="user">
     <header>
         <span class="comparison-name">Comparison 1</span>
-        <span class="add-feature-button" (click)="createFeature()">+</span>
+        <span class="add-feature-button" [ngClass]="{'disabled': user.features.length >= 5}" (click)="createFeature()">+</span>
     </header>
     <app-feature
             *ngIf="creating"

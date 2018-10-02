@@ -54,6 +54,14 @@ button {
         cursor: pointer;
         background-color: $PRIMARY_DARK_COLOR;
     }
+    &.disabled {
+        cursor: not-allowed;
+        background-color: $GRAY_LIGHT;
+        &:hover {
+            cursor: not-allowed;
+            background-color: $GRAY_LIGHT;
+        }
+    }
 }
 
 input, select, textarea, button{

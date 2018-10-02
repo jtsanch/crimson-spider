@@ -103,6 +103,10 @@ export class DecisionViewComponent implements OnInit {
     }
 
     public createFeature() {
+        if (this.user.features.length >= 5) {
+            this._alertService.showAlert('Limit of 5 Features per User', 'danger');
+            return;
+        }
         this.creating = true;
         this.feature = FeatureUtil.getEmptyObject();
     }

@@ -24,8 +24,14 @@
             margin-left: 1rem;
             display: flex;
             align-items: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
             .text {
                 margin-left: 6px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
         }
         .actions {
@@ -174,6 +180,7 @@
                     font-weight: 200;
                     text-overflow: ellipsis;
                     overflow: hidden;
+                    white-space: nowrap;
                 }
             }
             .input-group {

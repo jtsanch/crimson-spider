@@ -86,10 +86,7 @@ export class SpiderchartComponent implements OnInit, OnChanges {
                     }
                 },
                 legend: {
-                    position: 'right',
-                    labels: {
-                        fontSize: 16,
-                    }
+                    display: false,
                 }
             },
         });

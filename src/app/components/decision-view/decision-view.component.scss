@@ -20,7 +20,7 @@ app-decision-view {
     flex: 10;
     position: absolute;
     top: 3rem;
-    left: 20rem;
+    left: 23rem;
     width: calc(100vw - 30rem);
     .title {
         display: inline-block;
@@ -33,6 +33,7 @@ app-decision-view {
 .sidebar {
     height: calc(100vh - 3rem);
     z-index: 10;
+    width: 24rem;
     overflow-y: auto;
     display: inline-block;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
